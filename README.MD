@@ -8,28 +8,6 @@ Este é um projeto de portfólio pessoal desenvolvido com **React** e **Tailwind
 - **React**: Biblioteca para construção da interface do usuário.
 - **TailwindCSS**: Framework CSS para estilização rápida e responsiva.
 
-## Estrutura do Projeto
-
-O projeto é organizado da seguinte maneira:
-
-```
-/
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.jsx
-│   │   │   ├── Main.jsx
-│   │   │   ├── Footer.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Skill.jsx
-│   │   ├── Project.jsx
-│   │   ├── Contact.jsx
-│   ├── App.jsx
-│   ├── index.jsx
-```
-
 ### Componentes Principais
 
 - **App.jsx**: Componente principal que organiza a estrutura do portfólio.
@@ -38,8 +16,6 @@ O projeto é organizado da seguinte maneira:
 - **Páginas**: Arquivos individuais para cada seção do portfólio.
 
 ## Próximas Melhorias
-- Adicionar **comentários** ao código.
-- Criar a seção de **projetos**.
 - Implementar a seção de **contato**.
 
 ## Licença
