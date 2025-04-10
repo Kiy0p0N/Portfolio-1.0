@@ -47,12 +47,13 @@ function Header() {
 
         {/* Links do menu mobile */}
         <nav className="mt-16 bg-gray-900 flex flex-col space-y-4 p-4">
-          <Link href="#" content="Início" />
-          <Link href="#about" content="Sobre Mim" />
-          <Link href="#skill" content="Habilidades" />
-          <Link href="#project" content="Projetos" />
-          <Link href="#contact" content="Contato" />
+          <Link href="#" content="Início" onClick={() => setIsOpen(false)} />
+          <Link href="#about" content="Sobre Mim" onClick={() => setIsOpen(false)} />
+          <Link href="#skill" content="Habilidades" onClick={() => setIsOpen(false)} />
+          <Link href="#project" content="Projetos" onClick={() => setIsOpen(false)} />
+          <Link href="#contact" content="Contato" onClick={() => setIsOpen(false)} />
         </nav>
+
       </div>
     </header>
   );

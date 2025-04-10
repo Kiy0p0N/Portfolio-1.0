@@ -12,7 +12,7 @@ const groupedTechnologies = technologies.reduce((acc, tech) => {
 function Skill() {
   return (
     <section id="skill">
-      <div className="w-full pt-24 pb-24 flex flex-col justify-center items-center gap-10">
+      <div className="w-full pt-24 pb-24 bg-linear-to-b from-slate-950 to-slate-500 flex flex-col justify-center items-center gap-10">
         <Title size="text-4xl md:text-5xl" title="Minhas habilidades" />
 
         {/* Renderiza categorias */}

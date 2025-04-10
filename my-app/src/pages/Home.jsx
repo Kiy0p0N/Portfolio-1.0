@@ -47,8 +47,10 @@ function Home() {
 
     return (
         <section id="home">
-            <div className="w-full h-dvh flex justify-center items-center">
-                <Title size="text-4xl md:text-7xl" title={displayText}/>
+            <div className="w-full h-dvh bg-[url(../assets/gif/wallpaper.gif)] bg-cover bg-no-repeat flex justify-center items-center">
+                <div className="w-full h-full bg-linear-to-b from-slate-950/95 to-slate-950/100 flex justify-center items-center">
+                    <Title size="text-5xl md:text-7xl" title={displayText}/>
+                </div>
             </div>
         </section>
     );

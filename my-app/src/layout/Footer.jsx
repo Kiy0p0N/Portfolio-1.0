@@ -1,8 +1,4 @@
-import ImgSocial from "../components/ImgSocial";
-
-import instagram from "../assets/social/instagram.svg";
-import github from "../assets/social/github.svg";
-import linkedin from "../assets/social/linkedin.svg";
+import Social from "../components/Social";
 
 // Rodapé responsivo com ano e ícones sociais
 function Footer() {
@@ -17,21 +13,7 @@ function Footer() {
 
             {/* Ícones de redes sociais */}
             <div className="flex justify-center md:justify-end gap-4">
-                <ImgSocial
-                    href="https://www.instagram.com/felp.zip/"
-                    src={instagram}
-                    alt="Logo do Instagram"
-                />
-                <ImgSocial
-                    href="https://www.linkedin.com/in/felipe-cesar-rodrigues/"
-                    src={linkedin}
-                    alt="Logo do LinkedIn"
-                />
-                <ImgSocial
-                    href="https://github.com/Kiy0p0N"
-                    src={github}
-                    alt="Logo do Github"
-                />
+                <Social />
             </div>
         </footer>
     );

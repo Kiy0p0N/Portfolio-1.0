@@ -1,5 +1,3 @@
-import Title from "./Title";
-
 function ProjectCard({ name, description, repository, img_link }) {
     return (
         <div className="relative group rounded-2xl overflow-hidden shadow-lg">
@@ -10,8 +8,12 @@ function ProjectCard({ name, description, repository, img_link }) {
                 className="w-full h-72 object-cover transform duration-500 group-hover:scale-110"
             />
 
-            {/* Overlay ao passar o mouse */}
-            <div className="absolute inset-0 bg-slate-950/80 flex flex-col justify-center items-center px-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            {/* Overlay que aparece sempre em telas pequenas e no hover em telas grandes */}
+            <div className={`
+                absolute inset-0 bg-slate-950/80 flex flex-col justify-center items-center px-4 text-white
+                transition-opacity duration-500
+                opacity-100 md:opacity-0 md:group-hover:opacity-100
+            `}>
                 <h2 className="text-xl font-bold text-center mb-2">{name}</h2>
                 <p className="text-sm text-center">{description}</p>
 

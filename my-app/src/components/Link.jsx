@@ -1,10 +1,14 @@
-// Componente de link com estilo e hover
-function Link(props) {
+function Link({ href, content, onClick }) {
     return (
-        <a href={props.href} className="p-2 rounded-2xl hover:bg-blue-800">
-            {props.content}
-        </a>
+      <a
+        href={href}
+        onClick={onClick}
+        className="text-white hover:text-blue-500 transition-colors duration-300"
+      >
+        {content}
+      </a>
     );
-}
-
-export default Link;
+  }
+  
+  export default Link;
+  

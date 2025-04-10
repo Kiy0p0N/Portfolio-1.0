@@ -8,7 +8,7 @@ function About() {
             <div className="w-full pt-24 pb-16 flex flex-col justify-center items-center gap-8 px-4 text-center">
                 
                 {/* Título principal */}
-                <Title size="text-4xl md:text-5xl" title="Sobre mim" />
+                <Title size="text-4xl md:text-5xl" title="Quem sou eu?" />
 
                 {/* Frase de impacto */}
                 <h2 className="text-lg md:text-xl font-light italic text-blue-300">

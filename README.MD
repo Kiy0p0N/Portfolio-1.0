@@ -16,7 +16,7 @@ Este é um projeto de portfólio pessoal desenvolvido com **React** e **Tailwind
 - **Páginas**: Arquivos individuais para cada seção do portfólio.
 
 ## Próximas Melhorias
-- Implementar a seção de **contato**.
+- Deixar o design mais "amigável".
 
 ## Licença
 Este projeto está sob a licença MIT.
