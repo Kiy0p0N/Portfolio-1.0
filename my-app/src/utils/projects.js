@@ -1,0 +1,68 @@
+export const projects = [
+  {
+    title: "Meu Portfólio",
+    madeAt: "Pessoal",
+    techs: ["React", "TailwindCSS", "Framer Motion"],
+    link: "https://github.com/Kiy0p0N/Portfolio-1.0",
+  },
+  {
+    title: "Sabor da Roça",
+    madeAt: "Pessoal",
+    techs: ["React", "Tailwindcss"],
+    link: "https://github.com/Kiy0p0N/sabor-da-ro-a",
+  },
+  {
+    title: "SGHSS",
+    madeAt: "Trabalho da faculdade",
+    techs: ["React", "Tailwindcss", "Express", "PostgreSQL", "Axios", "Api Rest"],
+    link: "https://github.com/Kiy0p0N/projeto-multidisciplinar-frontend",
+  },
+  {
+    title: "Keeper App",
+    madeAt: "Pessoal",
+    techs: ["React", "Javascript", "CSS3"],
+    link: "https://github.com/Kiy0p0N/keeper-app",
+  },
+  {
+    title: "To-Do List",
+    madeAt: "Pessoal",
+    techs: ["React", "CSS3", "Tailwindcss"],
+    link: "https://github.com/Kiy0p0N/todo-list-react",
+  },
+  {
+    title: "Lordes Demônios - Tensura",
+    madeAt: "Pessoal",
+    techs: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express", "EJS", "Axios"],
+    link: "https://github.com/Kiy0p0N/demon-lord-from-tensura",
+  },
+  {
+    title: "Relógio",
+    madeAt: "Pessoal",
+    techs: ["React", "Tailwindcss"],
+    link: "https://github.com/Kiy0p0N/time",
+  },
+  {
+    title: "Book notes",
+    madeAt: "Pessoal",
+    techs: ["Node.js", "Express", "EJS", "Bootstrap", "PostgreSQL", "Axios", "Bcrypt"],
+    link: "https://github.com/Kiy0p0N/book-notes",
+  },
+  {
+    title: "Sistema de Autenticação",
+    madeAt: "Pessoal",
+    techs: ["Node.js", "Express", "PostgreSQL", "Bcrypt", "EJS", "express-session", "passpot.js"],
+    link: "http://github.com/Kiy0p0N/authentication-system",
+  },
+  {
+    title: "100 dias de Python",
+    madeAt: "Pessoal",
+    techs: ["Python"],
+    link: "https://github.com/Kiy0p0N/100-days-of-python",
+  },
+  {
+    title: "Web Blog",
+    madeAt: "Pessoal",
+    techs: ["Node.js", "Express", "Axios", "Api Rest", "EJS"],
+    link: "https://github.com/Kiy0p0N/web-blog"
+  },
+];

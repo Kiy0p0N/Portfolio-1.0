@@ -1,75 +1,81 @@
-import Title from "../components/Title";
-import Social from "../components/Social";
+import { motion } from "framer-motion";
+import { MessageCircle, Instagram, Linkedin } from "lucide-react";
 
-function Contact() {
-    return (
-        <section id="contact">
-            <div className="w-full pt-24 pb-24 flex flex-col items-center gap-6">
-                
-                <Title size="text-3xl md:text-5xl" title="Entre em contato" />
+const Contact = () => {
+  const contacts = [
+    {
+      name: "WhatsApp",
+      icon: <MessageCircle size={40} className="mb-4 text-green-400" />,
+      link: "https://wa.me/5535910144269?text=Olá%20Felipe%2C%20quero%20falar%20sobre...",
+      bg: "bg-green-500",
+      hover: "hover:bg-green-400",
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram size={40} className="mb-4 text-pink-400" />,
+      link: "https://www.instagram.com/felp.zip/",
+      bg: "bg-pink-500",
+      hover: "hover:bg-pink-400",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={40} className="mb-4 text-blue-400" />,
+      link: "https://www.linkedin.com/in/felipe-cesar-rodrigues/",
+      bg: "bg-blue-500",
+      hover: "hover:bg-blue-400",
+    },
+  ];
 
-                <p className="text-center max-w-xl text-white/80 text-sm md:text-base px-4">
-                    Ficarei feliz em conversar sobre projetos, colaborações ou responder dúvidas. Me chame em qualquer rede abaixo!
-                </p>
+  return (
+    <section
+      id="contact"
+      className="flex min-h-screen items-center justify-center bg-black px-6 py-20 text-white"
+    >
+      <div className="mx-auto max-w-5xl text-center">
+        {/* Título */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-4 text-3xl font-bold text-teal-400 md:text-4xl"
+        >
+          Vamos Conversar
+        </motion.h2>
 
-                {/* Ícones sociais (Instagram, GitHub, LinkedIn, etc.) */}
-                <Social />
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="mb-10 text-gray-400"
+        >
+          Escolha a rede social que preferir e fale comigo.
+        </motion.p>
 
-                {/* Texto para incentivar o uso do formulário */}
-                <p className="text-center max-w-xl text-lg text-gray-300">
-                    Ou me envie uma mensagem!
-                </p>
-
-                {/* Formulário de contato usando FormSubmit */}
-                <form
-                    action="https://formsubmit.co/de6ecd8061e2f3481c12bdcfdeb1a1d7"  // Endereço de destino das mensagens
-                    method="POST"
-                    className="w-11/12 md:w-2/3 lg:w-1/2 bg-slate-800 p-6 rounded-2xl flex flex-col gap-4 shadow-md"
-                >
-                    {/* Campo de nome */}
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Seu nome"
-                        required
-                        className="p-3 rounded-lg bg-slate-700 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    
-                    {/* Campo de e-mail */}
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Seu e-mail"
-                        required
-                        className="p-3 rounded-lg bg-slate-700 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    
-                    {/* Campo de mensagem */}
-                    <textarea
-                        name="message"
-                        placeholder="Sua mensagem"
-                        rows="5"
-                        required
-                        className="p-3 rounded-lg bg-slate-700 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                    ></textarea>
-
-                    {/* Impede verificação de captcha (reCAPTCHA) automática */}
-                    <input type="hidden" name="_captcha" value="false" />
-
-                    {/* Redireciona para o seu portfólio após o envio */}
-                    <input type="hidden" name="_next" value="https://portfolio-1-0-steel.vercel.app/" />
-
-                    {/* Botão de envio */}
-                    <button
-                        type="submit"
-                        className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 py-3 rounded-lg font-bold text-white"
-                    >
-                        Enviar mensagem
-                    </button>
-                </form>
-            </div>
-        </section>
-    );
-}
+        {/* Cards de Contato */}
+        <div className="grid gap-8 sm:grid-cols-3">
+          {contacts.map((contact, index) => (
+            <motion.div
+              key={contact.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="flex flex-col items-center rounded-xl bg-gray-900 p-6 shadow-lg"
+            >
+              {contact.icon}
+              <a
+                href={contact.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-2 flex items-center justify-center rounded-lg ${contact.bg} ${contact.hover} px-6 py-3 font-semibold text-black transition`}
+              >
+                Falar no {contact.name}
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Contact;

@@ -1,62 +1,81 @@
 import { useState } from "react";
-import Title from "../components/Title";
-import Link from "../components/Link";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import menu from "../assets/menu/menu.svg";
-import close from "../assets/menu/close.svg";
-
-function Header() {
-  // Estado para controlar se o menu mobile está aberto
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Início", href: "/" },
+    { name: "Sobre", href: "/sobre-mim" },
+    { name: "Projetos", href: "/projetos" },
+    { name: "Contato", href: "/contato" },
+  ];
+
   return (
-    // Cabeçalho fixo com fundo translúcido e borda inferior
-    <header className="fixed z-40 w-full p-5 flex justify-between items-center border-b backdrop-blur-2xl">
-      <Title size="text-3xl" title="Felipe" />
-      
-      {/* Navegação exibida apenas em telas grandes */}
-      <nav className="hidden lg:flex flex-1/2 justify-end gap-[15px]">
-        <Link href="#" content="Início" />
-        <Link href="#about" content="Sobre Mim" />
-        <Link href="#skill" content="Habilidades" />
-        <Link href="#project" content="Projetos" />
-        <Link href="#contact" content="Contato" />
-      </nav>
+    <header className="fixed top-0 left-0 z-50 w-full text-white shadow-lg bg-black">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        {/* Logo / Nome */}
+        <h1 className="text-xl font-bold tracking-wide">
+          Felipe<span className="text-teal-400">Cesar</span>
+        </h1>
 
-      {/* Ícone do menu hambúrguer visível apenas em telas pequenas */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden p-2"
-      >
-        <img src={isOpen ? close : menu} alt="Menu" className="w-6 h-6" />
-      </button>
-
-      {/* Menu lateral para mobile com transição de slide */}
-      <div
-        className={`fixed top-0 left-0 h-full w-full bg-gray-900 text-white transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out lg:hidden`}
-      >
-        {/* Botão para fechar o menu */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 p-2"
-        >
-          <img src={close} alt="Fechar Menu" className="w-6 h-6" />
-        </button>
-
-        {/* Links do menu mobile */}
-        <nav className="mt-16 bg-gray-900 flex flex-col space-y-4 p-4">
-          <Link href="#" content="Início" onClick={() => setIsOpen(false)} />
-          <Link href="#about" content="Sobre Mim" onClick={() => setIsOpen(false)} />
-          <Link href="#skill" content="Habilidades" onClick={() => setIsOpen(false)} />
-          <Link href="#project" content="Projetos" onClick={() => setIsOpen(false)} />
-          <Link href="#contact" content="Contato" onClick={() => setIsOpen(false)} />
+        {/* Desktop Nav */}
+        <nav className="hidden space-x-6 text-sm font-medium md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="transition-colors duration-200 hover:text-teal-400"
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Abrir menu"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Nav com animação */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="px-4 pb-4 md:hidden"
+          >
+            <ul className="flex min-h-screen flex-col space-y-3 text-sm">
+              {navLinks.map((link) => (
+                <motion.li
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05 }}
+                >
+                  <a
+                    href={link.href}
+                    className="block rounded px-3 py-2 transition hover:bg-teal-400/10 hover:text-teal-400"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
-}
+};
 
 export default Header;
