@@ -28,10 +28,7 @@ const Footer = () => {
           >
             <Linkedin size={24} />
           </a>
-          <a
-            href="/contato"
-            className="transition hover:text-teal-400"
-          >
+          <a href="/contato" className="transition hover:text-teal-400">
             <Mail size={24} />
           </a>
           <a

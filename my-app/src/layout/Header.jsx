@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full text-white shadow-lg bg-black">
+    <header className="fixed top-0 left-0 z-50 w-full bg-black text-white shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         {/* Logo / Nome */}
         <h1 className="text-xl font-bold tracking-wide">
