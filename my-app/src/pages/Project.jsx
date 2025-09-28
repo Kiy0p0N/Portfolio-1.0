@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "../utils/projects";
+import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -24,7 +25,7 @@ const Projects = () => {
             <thead>
               <tr className="border-b border-gray-800 text-sm text-gray-400">
                 <th className="pb-3 font-medium">Projeto</th>
-                <th className="pb-3 font-medium">Feito em</th>
+                <th className="pb-3 font-medium">Feito para</th>
                 <th className="pb-3 font-medium">Tecnologias</th>
                 <th className="pb-3 font-medium">Link</th>
               </tr>
@@ -57,9 +58,9 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-teal-400 hover:underline"
+                      className="flex gap-1 text-sm text-teal-400 hover:underline"
                     >
-                      {new URL(project.link).hostname} ↗
+                      {new URL(project.link).hostname} <ArrowUpRight />
                     </a>
                   </td>
                 </motion.tr>
